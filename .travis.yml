@@ -26,6 +26,7 @@ before_install:
   - sed -i "s/Even/行一法苑/g" themes/even/layouts/partials/footer.html
   - sed -i "58s/Even/行一法苑/g" config.toml
   - sed -i "4s/Even - A super concise theme for Hugo/分享感悟！！！/g" config.toml
+  - sed -i "23s/olOwOlo/行一法苑/g" config.toml
 
 install:
   - export HUGO_VERSION=0.51
