@@ -125,16 +125,16 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     warn = 180              # Display warning if the last modified time is more than these days ago.    # 如果文章最后更新于这天数之前，显示警告
 
   [params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
-    owner = "fydy"              # Your GitHub ID
-    repo = "hugo"               # The repo to store comments
-    clientId = "1aa167d92ca2636cff98"           # Your client ID
-    clientSecret = "1823e5efcb9f7cbb35b86ab064f95dc9f0da401b"       # Your client secret
-
-  [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
     owner = ""              # Your GitHub ID
     repo = ""               # The repo to store comments
     clientId = ""           # Your client ID
     clientSecret = ""       # Your client secret
+
+  [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
+    owner = "fydy"              # Your GitHub ID
+    repo = "hugo"               # The repo to store comments
+    clientId = "1aa167d92ca2636cff98"           # Your client ID
+    clientSecret = "1823e5efcb9f7cbb35b86ab064f95dc9f0da401b"       # Your client secret
 
   [params.flowchartDiagrams]# see https://blog.olowolo.com/example-site/post/js-flowchart-diagrams/
     enable = false
