@@ -1,0 +1,51 @@
+language: go
+
+go:
+  - 1.11
+
+branches:
+  only:
+    - source
+
+env:
+ global:
+   - GH_REF: github.com/fydy/hugo.git
+
+
+sudo: required
+
+git:
+  submodules: false
+
+# Use sed to replace the SSH URL with the public URL, then initialize submodules
+before_install:
+  - sed -i '/^base/'d config.toml
+  - sed -i '/^title = "/a\baseurl = "https://lvshi.cf/hugo/"' config.toml
+
+install:
+  - export HUGO_VERSION=0.51
+  - sudo pip install Pygments
+  - wget https://github.com/spf13/hugo/releases/download/v$HUGO_VERSION/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - chmod a+x hugo
+
+script:
+  - ./hugo
+
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "fydy"
+  - git config user.email "edu@yuns.me"
+  - git add .
+  - git commit -m "Update docs"
+  - git checkout -b master
+  - git push --quiet --force https://$hugo@github.com/fydy/hugo.git master
+  - git clone -b source https://github.com/fydy/hugo.git
+# Coding Pages
+  - git push --force --quiet "https://deweke:${CO_TOKEN}@${CO_REF}" master:master
+
+env:
+ global:
+   # Coding Pages
+  - CO_REF: git.coding.net/deweke/hugo.git
