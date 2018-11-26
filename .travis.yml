@@ -24,6 +24,7 @@ before_install:
   - sed -i "s/olOwOlo/fydy/g" themes/even/layouts/partials/footer.html
   - sed -i "s/hugo-theme-even/hugo/g" themes/even/layouts/partials/footer.html
   - sed -i "s/Even/行一法苑/g" themes/even/layouts/partials/footer.html
+  - sed -i "58s/Even/行一法苑/g" config.toml
 
 install:
   - export HUGO_VERSION=0.51
