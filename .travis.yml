@@ -19,9 +19,6 @@ git:
 
 # Use sed to replace the SSH URL with the public URL, then initialize submodules
 before_install:
-  - cd themes && rm -rf even && cd ..
-  - git submodule add https://github.com/olOwOlo/hugo-theme-even themes/even
-  - wget https://raw.githubusercontent.com/fydy/hugo/source/config.toml
   - sed -i '/^base/'d config.toml
   - sed -i '/^title = "/a\baseurl = "https://lvshi.cf/hugo/"' config.toml
   - sed -i "s/olOwOlo/fydy/g" themes/even/layouts/partials/footer.html
