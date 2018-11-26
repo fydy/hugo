@@ -125,10 +125,10 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
     warn = 180              # Display warning if the last modified time is more than these days ago.    # 如果文章最后更新于这天数之前，显示警告
 
   [params.gitment]          # Gitment is a comment system based on GitHub issues. see https://github.com/imsun/gitment
-    owner = ""              # Your GitHub ID
-    repo = ""               # The repo to store comments
-    clientId = ""           # Your client ID
-    clientSecret = ""       # Your client secret
+    owner = "fydy"              # Your GitHub ID
+    repo = "hugo"               # The repo to store comments
+    clientId = "1aa167d92ca2636cff98"           # Your client ID
+    clientSecret = "1823e5efcb9f7cbb35b86ab064f95dc9f0da401b"       # Your client secret
 
   [params.gitalk]           # Gitalk is a comment system based on GitHub issues. see https://github.com/gitalk/gitalk
     owner = ""              # Your GitHub ID
@@ -158,12 +158,12 @@ copyright = ""            # default: author.name ↓        # 默认为下面配
   [params.social]                                         # 社交链接
     a-email = "mailto:chunxiaqiu13@gmail.com"
 #    b-stack-overflow = "http://localhost:1313"
-    c-twitter = "http://localhost:1313"
-    d-facebook = "http://localhost:1313"
-    e-linkedin = "http://localhost:1313"
+    c-twitter = "http://twitter.com/chunfengxia"
+    d-facebook = "http://www.facebook.com/chunfengxiayu"
+#    e-linkedin = "http://localhost:1313"
 #    f-google = "http://localhost:1313"
-    g-github = "http://localhost:1313"
-    h-weibo = "http://localhost:1313"
+    g-github = "https://github.com/fydy/hugo"
+#    h-weibo = "http://localhost:1313"
 #    i-zhihu = "http://localhost:1313"
 #    j-douban = "http://localhost:1313"
 #    k-pocket = "http://localhost:1313"
