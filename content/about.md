@@ -8,3 +8,6 @@ weight: 50
 ---
 
 分享点滴，记录生活。
+
+E-mail: chunxiaqiu13@gmail.com
+TEl: +1-662-830-8260
