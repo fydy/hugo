@@ -10,6 +10,7 @@ author: "行一法苑"
 contentCopyright: '<a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License" target="_blank">Creative Commons Attribution-ShareAlike License</a>'
 
 ---
+
 ## **第一讲 民事诉讼的准备**
 
 **一、****起诉或应诉必须注意的三个基本问题（诉讼主体、时效审查、初步厘清法律关系，选择好诉讼角度）**
@@ -552,7 +553,7 @@ contentCopyright: '<a rel="license noopener" href="https://en.wikipedia.org/wiki
 
    级别管辖和地域管辖；在答辩期内提出。
 
-​                **第三讲  起 诉**
+##                 **第三讲  起 诉**
 
 **一、防止虚假诉讼**
 
@@ -574,7 +575,7 @@ contentCopyright: '<a rel="license noopener" href="https://en.wikipedia.org/wiki
 
 “（三）当事人所在社区、单位以及有关社会团体推荐的公民。”
 
-## 了解基层法律工作者作为委托代理人的重要意义，及作为委托代理人的基本注意事项。
+了解基层法律工作者作为委托代理人的重要意义，及作为委托代理人的基本注意事项。
 
 **三、起诉状**
 
@@ -1015,9 +1016,6 @@ contentCopyright: '<a rel="license noopener" href="https://en.wikipedia.org/wiki
 2、尽量不要与法官发生冲突；不要庭上发生争吵，尽管法官有时说话欠当。
 
 3、心胸开阔，不要因为法官的侮辱性语言而拂袖而去。
-
-  
-
  
 
 **五、调解的艺术**
