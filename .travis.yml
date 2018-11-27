@@ -41,11 +41,11 @@ script:
   - ./hugo
 
 after_script:
-  - cd ./public
+  - rm -rf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && rm -rf hugo && rm -rf LICENSE && rm -rf README.md && rm -rf .travis.yml
   - git init
   - git config user.name "fydy"
   - git config user.email "edu@yuns.me"
   - git add .
   - git commit -m "Update"
-  - git checkout -b master
-  - git push --quiet --force https://$hugo@github.com/fydy/hugo.git master
+  - git checkout -b gh-pages
+  - git push --quiet --force https://$hugo@github.com/fydy/hugo.git gh-pages
