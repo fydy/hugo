@@ -1,3 +1,4 @@
+[Settings]
 rm -rf themes/even && git clone https://github.com/olOwOlo/hugo-theme-even themes/even && rm -rf themes/even/.git
 sed -i '/^base/'d config.toml
 sed -i '/^title = "/a\baseurl = "https://lvshi.cf/hugo/"' config.toml
