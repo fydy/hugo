@@ -6,15 +6,6 @@ command = "hugo"
 HUGO_VERSION = "0.51"
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
-rm -rf themes/even && git clone https://github.com/olOwOlo/hugo-theme-even themes/even && rm -rf themes/even/.git
-sed -i '/^base/'d config.toml
-sed -i '/^title = "/a\baseurl = "https://lvshi.cf/hugo/"' config.toml
-sed -i "s/olOwOlo/fydy/g" themes/even/layouts/partials/footer.html
-sed -i "s/hugo-theme-even/hugo/g" themes/even/layouts/partials/footer.html
-sed -i "s/Even/行一法苑/g" themes/even/layouts/partials/footer.html
-sed -i "58s/Even/行一法苑/g" config.toml
-sed -i "4s/Even - A super concise theme for Hugo/分享感悟！！！/g" config.toml
-sed -i "23s/olOwOlo/行一法苑/g" config.toml
 
 [context.split1]
 command = "hugo --enableGitInfo"
