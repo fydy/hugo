@@ -42,6 +42,6 @@ after_script:
   - git config user.name "fydy"
   - git config user.email "edu@yuns.me"
   - git add .
-  - git commit -m "Update"
+  - git commit -m "update"
   - git checkout -b gh-pages
   - git push --quiet --force https://$hugo@github.com/fydy/hugo.git gh-pages
