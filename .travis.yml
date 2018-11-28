@@ -5,21 +5,21 @@ node_js: stable
 sudo: false
 
 directories:
-- node_modules
+  - node_modules
 
 before_install
-- git config --global user.name "fydy"
-- git config --global user.email "admin@yunc.me"
+  - git config --global user.name "fydy"
+  - git config --global user.email "barberw@mail.lcc.edu"
 
 install:
-- npm install hexo-cli -g
-- hexo init
-- git clone https://github.com/theme-next/hexo-theme-next.git themes/next
-- npm install
+  - npm install hexo-cli -g
+  - hexo init
+  - git clone https://github.com/theme-next/hexo-theme-next.git themes/next
+  - npm install
 
 after_success:
-- git init
-- git add --all .
-- git commit -m "hexo blog"
-- git checkout -b hexo
-- git push --quiet --force https://$hugo@github.com/fydy/hugo.git hexo
+  - git init
+  - git add --all .
+  - git commit -m "hexo blog"
+  - git checkout -b hexo
+  - git push --quiet --force https://$hugo@github.com/fydy/hugo.git hexo
