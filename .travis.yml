@@ -1,0 +1,28 @@
+language: node_js
+
+node_js: stable
+
+sudo: false
+
+directories:
+  - node_modules
+
+before_install:
+  - git config --global user.name "fydy"
+  - git config --global user.email "edu@yuns.me"
+
+install:
+  - npm install hexo-cli -g
+  - npm install
+
+script:
+  - hexo clean
+  - hexo g
+
+after_success:
+  - cd ./public
+  - git init
+  - git add --all .
+  - git commit -m "Travis CI Auto Builder"
+  - git checkout -b master/docs
+  - git push --quiet --force https://$hexo@github.com/fydy/fydy.github.io.git master/docs
