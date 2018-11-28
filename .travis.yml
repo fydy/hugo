@@ -10,6 +10,7 @@ directories:
   - node_modules
 
 install:
+  - rm -rf *
   - npm install hexo-cli -g
   - hexo init
   - git clone https://github.com/theme-next/hexo-theme-next.git themes/next
