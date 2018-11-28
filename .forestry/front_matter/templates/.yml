@@ -32,11 +32,12 @@ fields:
   label: Author
   type: text
   hidden: false
-  default: ''
+  default: 无讼法苑
 - name: contentCopyright
   label: Contentcopyright
   type: textarea
   hidden: false
-  default: ''
+  default: '''<a rel="license noopener" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"
+    target="_blank">Creative Commons Attribution-ShareAlike License</a>'''
 pages:
 - content/post/企业常见的劳动用工法律风险.md
