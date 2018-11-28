@@ -12,7 +12,8 @@ directories:
 install:
   - rm -rf *
   - npm install hexo-cli -g
-  - hexo init
+  - hexo init blog
+  - cd blog
   - git clone https://github.com/theme-next/hexo-theme-next.git themes/next
   - npm install
 
