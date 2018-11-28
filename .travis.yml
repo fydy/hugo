@@ -3,10 +3,6 @@ language: go
 go:
   - 1.11
 
-branches:
-  only:
-    - source
-
 env:
  global:
    - GH_REF: github.com/fydy/hugo.git
