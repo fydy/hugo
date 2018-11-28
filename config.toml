@@ -39,7 +39,7 @@ url = "/"
 weight = 1
 [params]
 archivePaginate = 5
-autoCollapseToc = false
+autoCollapseToc = true
 baiduAnalytics = ""
 baiduPush = false
 baiduVerification = ""
@@ -62,7 +62,7 @@ mathjax = false
 mathjaxEnableAutoNumber = false
 mathjaxEnableSingleDollar = false
 mathjaxUseLocalFiles = false
-moreMeta = false
+moreMeta = true
 postMetaInFooter = true
 showArchiveCount = false
 since = "2017"
