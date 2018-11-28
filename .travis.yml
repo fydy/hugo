@@ -6,14 +6,8 @@ branches:
   only:
     - source
 
-sudo: false
-
 directories:
   - node_modules
-
-before_install
-  - git config --global user.name "fydy"
-  - git config --global user.email "barberw@mail.lcc.edu"
 
 install:
   - npm install hexo-cli -g
@@ -22,6 +16,8 @@ install:
   - npm install
 
 after_success:
+  - git config --global user.name "fydy"
+  - git config --global user.email "barberw@mail.lcc.edu"
   - git init
   - git add --all .
   - git commit -m "hexo blog"
