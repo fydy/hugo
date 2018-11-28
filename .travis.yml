@@ -1,47 +1,25 @@
-language: go
+language: node_js
 
-go:
-  - 1.11
+node_js: stable
 
-env:
- global:
-   - GH_REF: github.com/fydy/hugo.git
+sudo: false
 
+directories:
+- node_modules
 
-sudo: required
-
-git:
-  submodules: false
-
-# Use sed to replace the SSH URL with the public URL, then initialize submodules
-before_install:
-  - rm -rf themes/even && git clone https://github.com/olOwOlo/hugo-theme-even themes/even && rm -rf themes/even/.git
-  - sed -i '/^base/'d config.toml
-  - sed -i '/^title = "/a\baseurl = "https://lvshi.cf/hugo/"' config.toml
-  - sed -i "s/olOwOlo/fydy/g" themes/even/layouts/partials/footer.html
-  - sed -i "s/hugo-theme-even/hugo/g" themes/even/layouts/partials/footer.html
-  - sed -i "s/Even/行一法苑/g" themes/even/layouts/partials/footer.html
-  - sed -i "58s/Even/行一法苑/g" config.toml
-  - sed -i "4s/Even - A super concise theme for Hugo/分享感悟！！！/g" config.toml
-  - sed -i "23s/olOwOlo/行一法苑/g" config.toml
-#  - sed -i '30,34d' config.toml
+before_install
+- git config --global user.name "fydy"
+- git config --global user.email "admin@yunc.me"
 
 install:
-  - export HUGO_VERSION=0.51
-  - sudo pip install Pygments
-  - wget https://github.com/spf13/hugo/releases/download/v$HUGO_VERSION/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
-  - tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
-  - chmod a+x hugo
+- npm install hexo-cli -g
+- hexo init
+- git clone https://github.com/theme-next/hexo-theme-next.git themes/next
+- npm install
 
-script:
-  - ./hugo
-
-after_script:
-  - rm -rf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz && rm -rf hugo && rm -rf LICENSE && rm -rf README.md && rm -rf .travis.yml
-  - git init
-  - git config user.name "fydy"
-  - git config user.email "edu@yuns.me"
-  - git add .
-  - git commit -m "Update"
-  - git checkout -b gh-pages
-  - git push --quiet --force https://$hugo@github.com/fydy/hugo.git gh-pages
+after_success:
+- git init
+- git add --all .
+- git commit -m "hexo blog"
+- git checkout -b hexo
+- git push --quiet --force https://$hugo@github.com/fydy/hugo.git hexo
