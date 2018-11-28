@@ -6,7 +6,7 @@ weight: 50
 comment: false
 menu:
   main:
-    weight: 1
+    weight: 5
 
 ---
 分享点滴，记录生活。
