@@ -130,3 +130,92 @@
 {{ range .Site.Params.customJS -}}
   <script src="{{ "/js/" | relURL }}{{ . }}"></script>
 {{ end }}
+
+<!-- owl carousel -->
+<script src="{{ .Site.BaseURL }}js/owl.carousel.min.js"></script>
+
+<link href="http://www.dowebok.com/demo/2014/93/css/owl.carousel.css" rel="stylesheet">
+<link href="http://www.dowebok.com/demo/2014/93/css/owl.theme.css" rel="stylesheet">
+<script src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://www.dowebok.com/demo/2014/93/js/owl.carousel.js"></script>
+<script>
+$(function(){
+	var time = 7;	//进度条时间，以秒为单位，越小越快
+
+	var $progressBar, $bar, $elem, isPause, tick, percentTime;
+
+	$('#owl-demo').owlCarousel({
+		slideSpeed: 500,
+		paginationSpeed: 500,
+		singleItem: true,
+		afterInit: progressBar,
+		afterMove: moved,
+		startDragging: pauseOnDragging
+	});
+
+	function progressBar(elem){
+		$elem = elem;
+		buildProgressBar();
+		start();
+	}
+
+	function buildProgressBar(){
+		$progressBar = $('<div>',{
+			id:'progressBar'
+		});
+		$bar = $('<div>',{
+			id:'bar'
+		});
+		$progressBar.append($bar).insertAfter($elem.children().eq(0));
+	}
+
+	function start(){
+		percentTime = 0;
+		isPause = false;
+		tick = setInterval(interval, 10);
+	}
+
+	function interval(){
+		if(isPause === false){
+			percentTime += 1 / time;
+			$bar.css({
+				width: percentTime+'%'
+			});
+			if(percentTime >= 100){
+				$elem.trigger('owl.next')
+			}
+		}
+	}
+
+	function pauseOnDragging(){
+		isPause = true;
+	}
+
+	function moved(){
+		clearTimeout(tick);
+		start();
+	}
+
+	$elem.on('mouseover',function(){
+		isPause = true;
+	})
+
+	$elem.on('mouseout',function(){
+		isPause = false;
+	});
+	
+    $('#owl-demo').owlCarousel({
+        items: 1,
+        autoPlay: 3000,
+        autoHeight: true,
+        transitionStyle: 'fade'
+    });
+});
+</script>
+<style>
+owl-demo { width: 900px; margin-left: auto; margin-right: auto;}
+#owl-demo .item{ display: block;}
+#owl-demo img { display: block; width: 100%; border: 0 none;}
+#bar{ width: 0%; max-width: 100%; height: 4px; background: #7fc242; overflow: hidden;}
+#progressBar{ width: 100%; background: #ededed;}
+</style>
