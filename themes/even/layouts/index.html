@@ -1,16 +1,15 @@
 {{- define "content" -}}
-<div class="wrap">
-	<div class="o-sliderContainer hasShadow" id="dowebokWrap">
-		<div class="o-slider" id="dowebok">
-			<div class="o-slider--item" data-image="http://www.dowebok.com/demo/355/images/5.jpg"></div>
-			<div class="o-slider--item" data-image="http://www.dowebok.com/demo/355/images/6.jpg"></div>
-			<div class="o-slider--item" data-image="http://www.dowebok.com/demo/355/images/1.jpg"></div>
-			<div class="o-slider--item" data-image="http://www.dowebok.com/demo/355/images/2.jpg"></div>
-			<div class="o-slider--item" data-image="http://www.dowebok.com/demo/355/images/3.jpg"></div>
-			<div class="o-slider--item" data-image="http://www.dowebok.com/demo/355/images/4.jpg"></div>
-		</div>
-	</div>
+<div id="dowebok" class="fader">
+    <img class="slide" src="http://www.dowebok.com/demo/222/images/img1.jpg">
+    <img class="slide" src="http://www.dowebok.com/demo/222/images/img2.jpg">
+    <img class="slide" src="http://www.dowebok.com/demo/222/images/img3.jpg">
+    <div class="fader_controls">
+        <div class="page prev" data-target="prev">&lsaquo;</div>
+        <div class="page next" data-target="next">&rsaquo;</div>
+        <ul class="pager_list"></ul>
+    </div>
 </div>
+
   <section id="posts" class="posts"> 
     {{/* (index .Site.Paginate) */}}
     {{- $paginator := .Paginate (where (where .Data.Pages "Type" "post") ".Params.hiddenfromhomepage" "!=" true) }}

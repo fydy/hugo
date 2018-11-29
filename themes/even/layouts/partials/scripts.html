@@ -131,31 +131,11 @@
   <script src="{{ "/js/" | relURL }}{{ . }}"></script>
 {{ end }}
 
-<link rel="stylesheet" href="http://www.dowebok.com/demo/355/css/style.css">
-<link rel="stylesheet" href="http://www.dowebok.com/demo/355/css/entypo.css">
-<script src="http://www.dowebok.com/demo/355/js/jquery.min.js"></script>
-<script src="http://www.dowebok.com/demo/355/js/hammer.min.js"></script>
-<script src="http://www.dowebok.com/demo/355/js/slider.js"></script>
+<link href="{{ "css/jquery.easyfader.css" | relURL}}" rel="stylesheet"> 
+<script src="{{ .Site.BaseURL }}js/jquery.min.js"></script>
+<script src="{{ .Site.BaseURL }}js/jquery.easyfader.min.js"></script>
 <script>
 $(function() {
-	$('#dowebok').pbTouchSlider({
-		slider_Wrap: '#dowebokWrap',
-		slider_Breakpoints: {
-			default: {
-				height: 500
-			},
-			tablet : {
-				height : 400,
-				media : 1024
-			},
-			smartphone : {
-				height : 300,
-				media : 768
-			}
-		}
-	});
+	$('#dowebok').easyFader();
 });
 </script>
-<style>
-.wrap {margin: 0 auto;}
-</style>
