@@ -22,12 +22,12 @@
   the-transition();
 
   +tablet() {
-    fixbutton() if hexo-config('sidebar.onmobile');
-    hide() if not hexo-config('sidebar.onmobile');
+    fixbutton() if hugo-config('sidebar.onmobile');
+    hide() if not hugo-config('sidebar.onmobile');
   }
   +mobile() {
-    fixbutton() if hexo-config('sidebar.onmobile');
-    hide() if not hexo-config('sidebar.onmobile');
+    fixbutton() if hugo-config('sidebar.onmobile');
+    hide() if not hugo-config('sidebar.onmobile');
   }
 
   &.back-to-top-on {
