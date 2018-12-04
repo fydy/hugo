@@ -1,13 +1,10 @@
 language: node_js
 
-sudo: required
+node_js: stable
 
 cache:
   directories:
     - node_modules
-
-node_js:
-  - "stable"
 
 
 # Use sed to replace the SSH URL with the public URL, then initialize submodules
