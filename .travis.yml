@@ -1,25 +1,31 @@
+# 使用语言
 language: node_js
-
+# node版本
 node_js: stable
 
 cache:
   directories:
     - node_modules
-
-
-# Use sed to replace the SSH URL with the public URL, then initialize submodules
+    
+# tarvis生命周期执行顺序详见官网文档
 before_install:
-  - rm -rf *
-  - npm install Mirror -g
-
-install:
-  - mirror init
+- git config --global user.name "fydy"
+- git config --global user.email "hargrovd@mail.lcc.edu"
+- rm -rf *
+- git clone -b gh-pages https://github.com/fydy/hugo.git
 
 after_success:
-  - git init
-  - git config user.name "fydy"
-  - git config user.email "edu@yuns.me"
-  - git add .
-  - git commit -m "update"
-  - git checkout -b blog
-  - git push --quiet --force https://$hugo@github.com/fydy/hugo.git blog
+- cd hugo
+- git init
+- git remote add origin https://gitlab.com/fydy/fydy.gitlab.io.git
+- git add .
+- git commit -m "Initial commit"
+# 这里的 REPO_TOKEN 即之前在 travis 项目的环境变量里添加的
+
+# Gitlab Pages
+- git push --force --quiet "https://fydy:${GI_TOKEN}@${GI_REF}" master
+
+env:
+ global:
+   # Gitlab Pages
+   - GI_REF: gitlab.com/fydy/fydy.gitlab.io.git
