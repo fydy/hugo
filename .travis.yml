@@ -14,8 +14,10 @@ before_install:
 - rm -rf *
 - git clone -b gh-pages https://github.com/fydy/hugo.git
 
-after_success:
+install:
 - cd hugo
+
+after_success:
 - git init
 - git remote add origin https://gitlab.com/fydy/fydy.gitlab.io.git
 - git add .
