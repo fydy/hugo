@@ -1,11 +1,7 @@
-# 使用语言
-language: node_js
-# node版本
-node_js: stable
+language: go
 
-cache:
-  directories:
-    - node_modules
+go:
+  - 1.10.2
     
 # tarvis生命周期执行顺序详见官网文档
 before_install:
@@ -16,6 +12,7 @@ before_install:
 
 install:
 - cd hugo
+- hugo
 
 after_success:
 - git init
