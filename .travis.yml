@@ -12,6 +12,7 @@ before_install:
 
 install:
 - cd hugo
+- hugo server
 
 after_success:
 - git init
