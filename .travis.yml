@@ -29,7 +29,8 @@ before_install:
   - sed -i "4s/Even - A super concise theme for Hugo/分享感悟！！！/g" config.toml
   - sed -i "23s/olOwOlo/行一法苑/g" config.toml
 #  - sed -i '30,34d' config.toml
-  - wget https://pcs.baidu.com/rest/2.0/pcs/file?method=download&app_id=266719&path=%2F%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE3065.rar
+  - sudo apt-get install axel
+  - axel -n 100 https://pcs.baidu.com/rest/2.0/pcs/file?method=download&app_id=266719&path=%2F%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE3065.rar
   - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
   - sudo apt-get install git-lfs
   - git lfs install
