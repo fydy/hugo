@@ -1,30 +1,56 @@
 language: go
 
 go:
-  - 1.10.2
-    
-# tarvis生命周期执行顺序详见官网文档
-before_install:
-- git config --global user.name "fydy"
-- git config --global user.email "hargrovd@mail.lcc.edu"
-- rm -rf *
-- git clone -b gh-pages https://github.com/fydy/hugo.git
+  - 1.11
 
-install:
-- cd hugo
-- hugo server
-
-after_success:
-- git init
-- git remote add origin https://gitlab.com/fydy/fydy.gitlab.io.git
-- git add .
-- git commit -m "Initial commit"
-# 这里的 REPO_TOKEN 即之前在 travis 项目的环境变量里添加的
-
-# Gitlab Pages
-- git push --force --quiet "https://fydy:${GI_TOKEN}@${GI_REF}" master
+branches:
+  only:
+    - source
 
 env:
  global:
-   # Gitlab Pages
-   - GI_REF: gitlab.com/fydy/fydy.gitlab.io.git
+   - GH_REF: github.com/fydy/hugo.git
+
+
+sudo: required
+
+git:
+  submodules: false
+
+# Use sed to replace the SSH URL with the public URL, then initialize submodules
+before_install:
+  - rm -rf themes/even && git clone https://github.com/olOwOlo/hugo-theme-even themes/even && rm -rf themes/even/.git
+  - sed -i '/^base/'d config.toml
+  - sed -i '/^title = "/a\baseurl = "https://lvshi.cf/hugo/"' config.toml
+  - sed -i "s/olOwOlo/fydy/g" themes/even/layouts/partials/footer.html
+  - sed -i "s/hugo-theme-even/hugo/g" themes/even/layouts/partials/footer.html
+  - sed -i "s/Even/行一法苑/g" themes/even/layouts/partials/footer.html
+  - sed -i "58s/Even/行一法苑/g" config.toml
+  - sed -i "4s/Even - A super concise theme for Hugo/分享感悟！！！/g" config.toml
+  - sed -i "23s/olOwOlo/行一法苑/g" config.toml
+#  - sed -i '30,34d' config.toml
+  - wget https://pcs.baidu.com/rest/2.0/pcs/file?method=download&app_id=266719&path=%2F%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE3065.rar
+  - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+  - sudo apt-get install git-lfs
+  - git lfs install
+
+install:
+  - export HUGO_VERSION=0.51
+  - sudo pip install Pygments
+  - wget https://github.com/spf13/hugo/releases/download/v$HUGO_VERSION/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - tar xzf hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  - chmod a+x hugo
+
+script:
+  - ./hugo
+
+after_script:
+  - cd ./public
+  - git init
+  - git lfs track "思维导图3065.rar"
+  - git config user.name "fydy"
+  - git config user.email "edu@yuns.me"
+  - git add .
+  - git commit -m "Update"
+  - git checkout -b master
+  - git push --quiet --force https://$hugo@github.com/fydy/hugo.git master
