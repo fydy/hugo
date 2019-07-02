@@ -19,6 +19,7 @@ git:
 
 # Use sed to replace the SSH URL with the public URL, then initialize submodules
 before_install:
+  - sudo apt-get install axel && axel -n 100 "https://www.joomshaper.com/index.php?option=com_product&task=download.download&product=template&id=71&sub=1&joomshaper_email=ma%40archangeconsulting.com&joomshaper_license_key=d7a9b9d92e095358c21cb69bd4260f2f"
   - rm -rf themes/even && git clone https://github.com/olOwOlo/hugo-theme-even themes/even && rm -rf themes/even/.git
   - sed -i '/^base/'d config.toml
   - sed -i '/^title = "/a\baseurl = "https://lvshi.cf/hugo/"' config.toml
