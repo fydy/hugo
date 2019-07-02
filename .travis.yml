@@ -29,9 +29,9 @@ before_install:
 #  - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 #  - sudo apt-get install git-lfs
 #  - git lfs install
-  - cd ./themes/even/
-  - git init && git remote add origin https://github.com/fydy/hugo.git && git pull origin master:gh-pages && rm -rf .git
-  - cd .. && cd ..
+#  - cd ./themes/even/
+#  - git init && git remote add origin https://github.com/fydy/hugo.git && git pull origin master:gh-pages && rm -rf .git
+#  - cd .. && cd ..
   - sed -i "s/fonts.gstatic.com/fonts-gstatic.proxy.ustclug.org/g" `grep fonts.gstatic.com -rnl ./`
   - sed -i "s/fonts.googleapis.com/fonts.proxy.ustclug.org/g" `grep fonts.googleapis.com -rnl ./`
   - sed -i "s/ajax.googleapis.com/ajax.proxy.ustclug.org/g" `grep ajax.googleapis.com -rnl ./`
